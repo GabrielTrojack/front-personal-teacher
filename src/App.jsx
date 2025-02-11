@@ -1,14 +1,13 @@
 import { useState } from 'react'
+import HeroSection from './sections/home/HeroSection'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-    <h1>Personal Teacher</h1>
+      <HeroSection />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

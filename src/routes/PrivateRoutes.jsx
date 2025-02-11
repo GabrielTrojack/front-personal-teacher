@@ -1,0 +1,1 @@
+//Rotas de acesso que requerem obrigatoriamente autenticação do usuário (avaliação da prova, resultados)
