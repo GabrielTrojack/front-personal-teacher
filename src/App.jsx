@@ -1,11 +1,10 @@
-import { useState } from 'react'
-import HeroSection from './sections/home/HeroSection'
+import Home from './pages/Home';
 import './App.css'
 
 function App() {
   return (
     <>
-      <HeroSection />
+      <Home />  
     </>
   );
 }
