@@ -1,0 +1,23 @@
+.solid-ground {
+    position: absolute;
+    right: 0;
+    margin-top: -18px;
+    margin-left: 0;
+    width: 200vw; 
+    height: 100vh; 
+    background-color: #FFEECF;
+    transform: rotate(200deg);
+    z-index: -10;
+    background-size: cover;
+}
+
+.background-two {
+    position: absolute;
+    left: 0;
+    margin-top: 520px;
+    width: 100vw;
+    height: 100vh; 
+    z-index: -10;
+    background-color: #FFEECF;
+    background-size: cover;
+}

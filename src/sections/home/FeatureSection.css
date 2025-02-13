@@ -1,0 +1,81 @@
+/* Estilos da FeatureSection */
+.feature-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 290px 0;
+    z-index: 10;
+  }
+  
+  .feature {
+    text-align: center;
+    width: 25%;
+  }
+  
+  .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 154px;
+    height: 154px;
+    background-color: #A1B5D8;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    transition: transform 0.3s ease;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .feature h3 {
+    padding-top: 35px;
+    margin: 15px 0;
+    font-family: 'Akshar', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 1.85rem;
+    color: #000000;
+  }
+  
+  .feature p {
+    padding: 20px 60px 60px 60px;
+    line-height: 24px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    text-align: justify;
+    font-size: 1.2rem;
+    color: #000000;
+  }
+  
+  .circle:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Ajustando os ícones para serem responsivos e centralizados */
+  .relatory-icon {
+    padding-left: 6px;
+    width: 75%;
+    height: 75%;
+  }
+  
+.solutions-icon {
+    padding-top: 4px;
+    width: 65%;
+    height: 65%;
+}
+  
+.rocket-icon {
+    padding-right: 5px;
+    width: 55%;
+    height: 55%;
+}
+
+  .feature {
+    opacity: 0; /* Torna os elementos invisíveis */
+    transform: translateY(50px); /* Posiciona os elementos abaixo da tela */
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out; /* Animação suave */
+  }
+  
+  /* Estilo para quando o efeito for acionado */
+  .feature.visible {
+    opacity: 1; /* Torna os elementos visíveis */
+    transform: translateY(0); /* Move os elementos para o lugar */
+  }  
