@@ -1,10 +1,24 @@
-import Home from './pages/Home';
-import './App.css'
+import React, { useEffect, useState } from 'react';
+import Home from './pages/home';
+import Signup from './pages/signup';
+import './index.css';
+import './App.css';
 
 function App() {
-  return (
+  const [currentPage, setCurrentPage] = useState('home');
+  
+  useEffect(() => {
+    const path = window.location.pathname;  // Verifica a URL atual
+    if (path === '/cadastro') {
+      setCurrentPage('signup');
+    } else {
+      setCurrentPage('home');
+    }
+  }, []);
+
+ return (
     <>
-      <Home />  
+      {currentPage === 'home' ? <Home /> : <Signup />}
     </>
   );
 }

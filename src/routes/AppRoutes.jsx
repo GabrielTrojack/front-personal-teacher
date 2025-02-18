@@ -1,1 +1,0 @@
-//Rotas principais das aplicações
