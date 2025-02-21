@@ -1,25 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './pages/home';
 import Signup from './pages/signup';
+import Login from './pages/login';
 import './index.css';
-import './App.css';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home');
-  
-  useEffect(() => {
-    const path = window.location.pathname;  // Verifica a URL atual
-    if (path === '/cadastro') {
-      setCurrentPage('signup');
-    } else {
-      setCurrentPage('home');
-    }
-  }, []);
-
- return (
-    <>
-      {currentPage === 'home' ? <Home /> : <Signup />}
-    </>
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/cadastro" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
   );
 }
 

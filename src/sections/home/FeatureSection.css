@@ -1,11 +1,11 @@
 /* Estilos da FeatureSection */
 .feature-section {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 290px 0;
-    z-index: 10;
-  }
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start; /* Mudar para flex-start pode ajudar */
+  padding: 290px 0;
+  z-index: 10;
+}
   
   .feature {
     text-align: center;
@@ -16,14 +16,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 154px;
-    height: 154px;
+    width: 154px; /* Mantenha a largura */
+    height: 154px; /* Mantenha a altura */
+    aspect-ratio: 1; /* Garante que o círculo mantenha a proporção */
     background-color: #A1B5D8;
     border-radius: 50%;
     margin: 0 auto 20px;
     transition: transform 0.3s ease;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
-  }
+}
   
   .feature h3 {
     padding-top: 35px;
@@ -36,8 +37,9 @@
   }
   
   .feature p {
-    padding: 20px 60px 60px 60px;
-    line-height: 24px;
+    padding: 20px 45px 50px 45px;
+    margin-right: 2rem;
+    line-height: 25px;
     font-family: 'Outfit', sans-serif;
     font-weight: 300;
     text-align: justify;

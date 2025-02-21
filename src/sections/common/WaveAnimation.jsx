@@ -15,8 +15,8 @@ function WaveAnimation() {
       style={{
         position: 'absolute',
         bottom: 0,
-        margin: -560,
-        width: '200%',
+        margin: -600,
+        width: '200rem',
         zIndex: -1,
         transform: 'rotate(20deg)',
         overflowX: 'hidden',

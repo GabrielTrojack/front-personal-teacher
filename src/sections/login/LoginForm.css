@@ -1,3 +1,5 @@
+/* Estilos Login */
+
 body {
     background-color: #2B59C3;
     display: flex;
@@ -18,7 +20,7 @@ body {
     overflow: hidden;
 }
 
-.image-section {
+.login-image-section {
     background-color: rgba(3, 206, 164, 0.6);
     border-top-right-radius: 0.8rem;
     border-bottom-right-radius: 0.8rem;
@@ -29,19 +31,18 @@ body {
     flex: 1;
 }
 
-.image-section img {
-    max-width: 125%;
+.login-image-section img {
+    max-width: 100%;
     height: auto;
 }
 
-.form-section {
-    padding: 1rem;
-    padding-right: 2rem;
+.login-section {
+    padding: 1.5rem;
     flex: 1;
 }
 
-.form-section h2 {
-    margin-left: 3rem;
+.login-section h2 {
+    margin-left: 8rem;
     font-size: 1.5rem;
     font-weight: bold;
     margin-top: 2rem;
@@ -50,11 +51,11 @@ body {
     letter-spacing: 0.05rem;
 }
 
-.form-group {
+.login-group {
     margin-bottom: 1rem;
 }
 
-.form-group label {
+.login-group label {
     font-size: 0.9rem;
     display: block;
     color: #4b5563;
@@ -63,8 +64,8 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-.form-group input[type="text"],
-.form-group input[type="password"] {
+.login-group input[type="text"],
+.login-group input[type="password"] {
     width: 70%;
     padding: 1.5rem;
     background-color: #D9D9D9;
@@ -96,7 +97,7 @@ button {
     width: 80%;
     background-color: #2B59C3;
     color: white;
-    padding: 1rem;
+    padding: 1.5rem;
     margin-left: 3rem;
     border: none;
     cursor: pointer;
@@ -106,12 +107,12 @@ button:hover {
     background-color: #1d4ed8;
 }
 
-.signup-p {
-    align-items: center;
-    justify-content: center;
-    margin-left: 3rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+p {
+    display: inline-flex;
+    justify-content: space-between;
+    margin-right: 4.5rem;
+    margin-left: 3.3rem;
+    margin-top: 2.3rem;
     color: #071E59;
     opacity: 80%;
     font-family: "Inter", sans-serif;

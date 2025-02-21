@@ -7,13 +7,10 @@ import WaveAnimation from "../sections/common/WaveAnimation";
 import FeatureSection from "../sections/home/FeatureSection";
 
 const Home = () => {
-    const handleRedirect = () => {
-        window.location.href = '/cadastro';
-    };
 
     return (
         <div>
-            <HeroSection onRedirect = {handleRedirect}/> 
+            <HeroSection /> 
             <WavesBackground />
             <WaveAnimation />
             <FeatureSection />

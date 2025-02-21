@@ -1,5 +1,6 @@
 import React from "react";
 import "./SignupForm.css";
+import { Link } from 'react-router-dom';
 import SignupIcon from "./../assets/public/signup-icon.svg";
 
 function SignupForm () {
@@ -28,7 +29,9 @@ function SignupForm () {
             </div>
             <button type="submit">CADASTRAR-SE</button>
           </form>
-          <p>Já possuo uma conta</p>
+          <Link to="/login">
+          <p className="signup-p">Já possuo uma conta</p>
+          </Link>
         </div>
       </div>
     );

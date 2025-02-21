@@ -1,9 +1,10 @@
     import React from "react";
     import "./HeroSection.css";
+    import { Link } from 'react-router-dom';
     import PlayIcon from "../../assets/public/play-icon.svg";
     import HeroImage from "../../assets/study-image.jpg";
 
-    const HeroSection = ({ onRedirect }) => {
+    const HeroSection = () => {
         return (
             <section className="hero-section">
                 <div className="hero-content">
@@ -13,9 +14,11 @@
                 <p className="hero-description">Com uma abordagem interativa e inteligente, oferecemos a você um plano de estudo adaptado às suas necessidades. Torne o aprendizado mais envolvente e eficaz. Transforme suas dificuldades em oportunidades e conquiste seus objetivos com uma experiência de estudo que realmente faz a diferença.</p>
                 
                 <div className="hero-button-container">
-                    <button onClick={onRedirect} className="hero-button">
+                    <Link to="/cadastro" style={{ textDecoration: 'none' }}>
+                    <button className="hero-button">
                     <img src={PlayIcon} alt="Play" className="play-icon" />
                     Começar jornada</button>
+                    </Link>
                     </div>
                 </div>
 
