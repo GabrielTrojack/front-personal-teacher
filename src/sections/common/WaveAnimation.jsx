@@ -1,7 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Wavify from 'react-wavify';
 
 function WaveAnimation() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    // Atualiza o tamanho da tela quando a janela é redimensionada
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Limpa o listener quando o componente é desmontado
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // A animação de escala se adapta à largura da tela
+  const scaleValue = windowWidth > 1024 ? 1.2 : 1; // Aumenta a escala para telas grandes
+
   return (
     <Wavify
       fill="#FFEECF"
@@ -15,11 +34,12 @@ function WaveAnimation() {
       style={{
         position: 'absolute',
         bottom: 0,
-        margin: -600,
+        margin: '-600px',
         width: '200rem',
         zIndex: -1,
-        transform: 'rotate(20deg)',
+        transform: `rotate(20deg) scale(${scaleValue})`, // Aplica a escala dinamicamente
         overflowX: 'hidden',
+        transition: 'transform 0.5s ease', // Transição suave
       }}
     />
   );

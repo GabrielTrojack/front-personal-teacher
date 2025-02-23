@@ -5,7 +5,7 @@ import LoginIcon from "./../../assets/public/login-icon.svg";
 
 function LoginForm () {
     return(
-        <div className="container">
+        <div className="login-container">
         <div className="login-image-section">
             <img src={LoginIcon} alt="Estudante estudando"/>
         </div>
@@ -26,7 +26,9 @@ function LoginForm () {
             </div>
             <button type="submit">LOGIN</button>
           </form>
+          <Link to="/reset">
           <p>Esqueceu a senha?</p>
+          </Link>
           <Link to="/cadastro">
          <p>Cadastrar-se</p>
         </Link>

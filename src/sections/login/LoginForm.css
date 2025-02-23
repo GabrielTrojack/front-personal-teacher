@@ -9,7 +9,7 @@ body {
     margin: 0;
 }
 
-.container {
+.login-container {
     background-color: white;
     border-radius: 0.8rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -123,7 +123,7 @@ p {
 }
 
 @media (min-width: 768px) {
-    .container {
+    .login-container {
         flex-direction: row;
     }
 }

@@ -1,11 +1,11 @@
 import React from "react";
 import "./SignupForm.css";
 import { Link } from 'react-router-dom';
-import SignupIcon from "./../assets/public/signup-icon.svg";
+import SignupIcon from "./../../assets/public/signup-icon.svg";
 
 function SignupForm () {
     return (
-      <div className="container">
+      <div className="signup-container">
         <div className="image-section">
             <img src={SignupIcon} alt="Estudante estudando"/>
         </div>
