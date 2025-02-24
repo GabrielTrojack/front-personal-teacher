@@ -17,9 +17,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 154px; /* Mantenha a largura */
-    height: 154px; /* Mantenha a altura */
-    aspect-ratio: 1; /* Garante que o círculo mantenha a proporção */
+    width: 154px;
+    height: 154px;
+    aspect-ratio: 1;
     background-color: #A1B5D8;
     border-radius: 50%;
     margin: 0 auto 20px;
