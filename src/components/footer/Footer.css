@@ -1,0 +1,47 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que a altura da página seja no mínimo 100% da tela */
+}
+
+/* Estilo do Footer */
+.footer {
+  background-color: #FFEECF;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Alinha os itens no centro */
+  align-items: center; /* Garante que o conteúdo verticalmente fique alinhado */
+  gap: 20px; /* Adiciona um espaçamento entre os itens */
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-links {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* O conteúdo principal pode ser qualquer coisa, mas a altura ocupará todo o espaço disponível */
+.main-content {
+  flex: 1; /* Isso faz com que o conteúdo principal ocupe todo o espaço disponível */
+}
