@@ -12,8 +12,8 @@ const Navbar = () => {
       <div className="nav-links">
         <a href="#sobre">Sobre</a>
       </div>
-      <Link>
-      <button className="login-btn">Sair</button>
+      <Link to="login">
+      <button className="login-btn">Login</button>
       </Link>
     </nav>
   );
