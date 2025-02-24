@@ -29,13 +29,15 @@ function WaveAnimation() {
         height: 30,
         amplitude: 75,
         speed: 0.18,
-        points: 6,
+        points: 4,
       }}
       style={{
-        position: 'absolute',
-        bottom: 0,
-        margin: '-600px',
-        width: '200rem',
+        position: 'relative',
+        bottom: '0',
+        top: '16rem',
+        margin: '',
+        width: '100%',
+        height: '15rem',
         zIndex: -1,
         transform: `rotate(20deg) scale(${scaleValue})`, // Aplica a escala dinamicamente
         overflowX: 'hidden',

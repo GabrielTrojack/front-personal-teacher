@@ -8,6 +8,7 @@
 }
 
 .logo img {
+  margin-left: 1rem;
   height: 80px; 
 }
 
@@ -21,13 +22,13 @@
   color: #fff; 
   text-decoration: none;
   font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.05rem;
   padding: 10px 15px; 
   margin-right: 10px;
   display: inline-flex; 
   align-items: center;
   justify-content: center; 
-  border-radius: 5px;
 }
 
 .nav-links a:hover {
@@ -35,14 +36,15 @@
 }
 
 .login-btn {
-  padding: 12px 24px;
+  padding: 14px 35px;
   background-color: #000; 
   color: #fff; 
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.08rem;
   margin-left: 10px;
   display: inline-flex;
   align-items: center; 

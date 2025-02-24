@@ -7,7 +7,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 150px;
+    padding: 3rem;
+    gap: 3rem;
     width: 90vw; 
     max-width: 1200px;
     margin: 0 auto; 
@@ -28,6 +29,10 @@
     font-family: 'Akshar', sans-serif;
     text-transform: uppercase;
     color: #071E59;
+}
+
+.hero-content {
+    margin-left: -2rem;
 }
 
 .hero-description {

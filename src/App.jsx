@@ -5,6 +5,7 @@ import Signup from './pages/signup';
 import Login from './pages/login';
 import Forgot from './pages/forgotpass';
 import NotFound from './pages/404page';
+import Results from './pages/results';
 import './index.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/cadastro" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/reset" element={<Forgot/>} />
+        <Route path="/result" element={<Results/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

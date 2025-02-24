@@ -6,6 +6,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     margin: 0;
+    font-family: "Outfit", sans-serif;
 }
 
 .notfound-container {
@@ -39,7 +40,6 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     color: white;
-    font-family: "Outfit", sans-serif;
     letter-spacing: 0.05rem;
     text-align: left;
 }
@@ -48,7 +48,6 @@ body {
     display: flex;
     margin: 0 0 1rem 0;
     color: white;
-    font-family: "Outfit", sans-serif;
     letter-spacing: 0.05rem;
     text-align: left;
 }
@@ -79,6 +78,7 @@ body {
     font-size: 1.1rem;
     margin: 0 3rem 0 0;
     border-radius: 2rem;
+    font-family: "Outfit", sans-serif;
     transition: background 0.3s ease-in-out;
 }
 
