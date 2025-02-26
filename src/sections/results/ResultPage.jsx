@@ -7,10 +7,10 @@ function ResultPage() {
       <main className='main-container'>
         {/* Primeira content-box com resultados por tema */}
         <div className='content-box'>
-          <h1>Resultado por Tema</h1>
+          <h1 className='title-result'>Resultado por Tema</h1>
           
           <section>
-            <h2>Geometria:</h2>
+            <h2 className='disciplin'>Geometria:</h2>
             <p>Acertos: 67%</p>
             <div className="grafico">
               <div className="barra" style={{ width: '67%' }}></div>
@@ -18,7 +18,7 @@ function ResultPage() {
           </section>
 
           <section>
-            <h2>Cálculo:</h2>
+            <h2 className='disciplin'>Cálculo:</h2>
             <p>Acertos: 56%</p>
             <div className="grafico">
               <div className="barra" style={{ width: '56%' }}></div>
@@ -26,7 +26,7 @@ function ResultPage() {
           </section>
 
           <section>
-            <h2>Álgebra:</h2>
+            <h2 className='disciplin'>Álgebra:</h2>
             <p>Acertos: 80%</p>
             <div className="grafico">
               <div className="barra" style={{ width: '80%' }}></div>
@@ -36,20 +36,20 @@ function ResultPage() {
 
         {/* Segunda content-box com dados de tempo */}
         <div className='content-box'>
-          <h1>Dados de Tempo</h1>
+          <h1 className='title-result'>Dados de Tempo</h1>
           
           <section>
-            <h2>Tempo total de execução:</h2>
+            <h2 className='text-content'>Tempo total de execução:</h2>
             <p>2 horas e 10 minutos</p>
           </section>
 
           <section>
-            <h2>Média de tempo por questão:</h2>
+            <h2 className='text-content'>Média de tempo por questão:</h2>
             <p>6 minutos por questão</p>
           </section>
 
           <section>
-            <h2>Tempo restante:</h2>
+            <h2 className='text-content'>Tempo restante:</h2>
             <p>20 minutos</p>
           </section>
 

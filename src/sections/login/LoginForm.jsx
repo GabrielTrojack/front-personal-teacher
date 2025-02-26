@@ -24,7 +24,9 @@ function LoginForm () {
               <input type="checkbox" id="terms" />
               <label htmlFor="terms">Lembrar de mim</label>
             </div>
+            <Link to="/exam">
             <button type="submit">LOGIN</button>
+            </Link>
           </form>
           <Link to="/reset">
           <p>Esqueceu a senha?</p>

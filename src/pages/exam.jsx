@@ -8,7 +8,7 @@ const Exam = () => {
         <div>
             <Navbar />
             <ExamPage />
-            <Footer />
+            <Footer color="#2B59C3"/>
         </div>
     );
 }

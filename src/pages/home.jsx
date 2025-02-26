@@ -17,7 +17,7 @@ const Home = () => {
             <WavesBackground />
             <WaveAnimation />
             <FeatureSection />
-            <Footer />
+            <Footer color="#FFEAC3"/>
         </div>
     );
 };

@@ -27,7 +27,9 @@ function SignupForm () {
               <input type="checkbox" id="terms" />
               <label htmlFor="terms">Eu aceito os Termos de Serviço</label>
             </div>
+            <Link to="/exam">
             <button type="submit">CADASTRAR-SE</button>
+            </Link>
           </form>
           <Link to="/login">
           <p className="signup-p">Já possuo uma conta</p>

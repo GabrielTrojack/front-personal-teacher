@@ -17,13 +17,12 @@
 .background-two {
     position: absolute;
     top: 100rem;
-    padding: 4rem;
+    padding: 2rem;
     left: 0;
     width: 100vw;
-    height: 93vh; 
+    height: 100%; 
     z-index: -10;
     background-color: #FFEECF;
-    background-size: cover;
 }
 
 /* Responsividade */

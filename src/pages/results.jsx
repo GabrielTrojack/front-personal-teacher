@@ -9,7 +9,7 @@ const Result = () => {
         <div>
             <Navbar />
             <ResultPage/>
-            <Footer/>
+            <Footer color="#2B59C3"/>
         </div>
     );
 }

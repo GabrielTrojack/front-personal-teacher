@@ -1,9 +1,9 @@
 import React from 'react';
 import './Footer.css'; 
 
-const Footer = () => {
+const Footer = ({color}) => {
   return (
-    <footer className="footer">
+    <footer className="footer" style={{ backgroundColor: color }}>
       <div className="footer-content">
         <p>&copy; 2025 Personal Teacher. Todos os direitos reservados.</p>
         <div className="footer-links">
