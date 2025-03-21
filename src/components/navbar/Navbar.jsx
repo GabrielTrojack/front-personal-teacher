@@ -38,7 +38,7 @@ const Navbar = () => {
       </div>
 
       {token ? 
-        <button onClick={openModal} className="login-btn">Logout</button> :
+        <button onClick={openModal} className="login-btn">Sair</button> :
         (<Link to="/login">
           <button className="login-btn">Login</button>
         </Link>)}
