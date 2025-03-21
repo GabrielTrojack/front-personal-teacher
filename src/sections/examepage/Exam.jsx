@@ -166,9 +166,9 @@ function Exam() {
         <Link to="/result" style={{ textDecoration: 'none' }}>
         <div className='finalizar-btn-container'>
         <button className='button-lp'>
-         <span class="shadow"></span>
-         <span class="edge"></span>
-         <span class="front text">FINALIZAR AVALIAÇÃO
+         <span className="shadow"></span>
+         <span className="edge"></span>
+         <span className="front text">FINALIZAR AVALIAÇÃO
          </span>
          </button>
         </div>
