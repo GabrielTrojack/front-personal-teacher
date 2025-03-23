@@ -75,10 +75,7 @@ const Popup = () => {
     };
 
     const handleExitClick = () => {
-        const confirmExit = window.confirm("Tem certeza que deseja sair?");
-        if (confirmExit) {
          window.location.reload();
-        }
     };
 
       useEffect(() => {

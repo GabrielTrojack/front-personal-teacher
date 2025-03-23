@@ -203,7 +203,7 @@ blockquote {
   border: none;
   background: transparent;
   padding: 0;
-  cursor: pointer;
+  cursor: not-allowed;
   outline-offset: 4px;
   transition: filter 250ms;
   user-select: none;
@@ -228,7 +228,7 @@ blockquote {
 }
 .button-lpdisable:hover {
   background: hsl(345, 100%, 67%);
-  cursor: default;
+  cursor: not-allowed;
 }
 
 /* Efeitos de sombra e borda do botão */

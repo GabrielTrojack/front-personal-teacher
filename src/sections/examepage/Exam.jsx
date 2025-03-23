@@ -91,8 +91,19 @@ function Exam() {
       isCorrect: selectedAnswers[questionId].isCorrect,
     }));
 
+    const acertos = [];
+       respostas.forEach(item => {
+        if (item.isCorrect) {
+          const assuntoIdExistente = acertos.find(acerto => acerto.assuntoId === item.assuntoId);
+          if (assuntoIdExistente) {
+            assuntoIdExistente.count++;
+          } else {
+            acertos.push({ assuntoId: item.assuntoId, count: 1 });
+          }
+        }
+      });
+
     try {
-  
       const response = await fetch(`http://localhost:3333/exam/updateFimTempo/${examId}`, {
         method: 'PUT',
         headers: {
@@ -109,14 +120,39 @@ function Exam() {
         console.error('Erro ao atualizar fimTempo:', errorText);
         return;
       }
-
+          const acertosPorAssunto = {};
+          acertos.forEach(acerto => {
+            acertosPorAssunto[acerto.assuntoId] = acerto.count;
+          });
+    
+          if (Object.keys(acertosPorAssunto).length === 0) {
+            console.error('Erro: Nenhum acerto encontrado para enviar.');
+            return;
+          }
+    
+          const secondresponse = await fetch(`http://localhost:3333/exam/updateAcertos/${examId}`, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': token,
+            },
+            body: JSON.stringify({ acertosPorAssunto })
+          });
+    
+          if (!secondresponse.ok) {
+            const errorText = await secondresponse.text();
+            console.error('Erro ao atualizar acertos:', errorText);
+            return;
+          }
+    
+          const data = await secondresponse.json();
+          console.log('Acertos atualizados com sucesso:', data.message);
       document.title = "Resultado da Avaliação";      
       navigate('/result', { state:{
-        respostas: respostas, 
         examId: examId
       }});
     } catch (error) {
-      console.error('Erro ao atualizar fimTempo:', error);
+      console.error('Erro ao atualizar informaçoes:', error);
     }
   };
 
@@ -156,7 +192,7 @@ function Exam() {
 
   return (
   <div className='Exam-page'>
-        {showPopup && <Popup onStart={handleStart} />}
+        {/* {showPopup && <Popup onStart={handleStart} />} */}
     <div className="Exam">
       <div className="SEAPback">
         <img src={SEAPBG} alt="Fundo SEAP" />
@@ -175,7 +211,7 @@ function Exam() {
 
         <div className="content-box">
           <h1>Simulado de Exame de Avaliação de Produtividade:</h1>
-          <h2 className='title-select'>{subject === "portugues" ? "PROVA DE LINGUAGENS, CÓDIGOS E SUAS TECNOLOGIAS" : "PROVA DE MATEMÁTICA E SUAS TECNOLOGIAS"}</h2>
+          {/* <h2 className='title-select'>{subject === "portugues" ? "PROVA DE LINGUAGENS, CÓDIGOS E SUAS TECNOLOGIAS" : "PROVA DE MATEMÁTICA E SUAS TECNOLOGIAS"}</h2> */}
 
           {examDetails.map((questao) => {
             return (
