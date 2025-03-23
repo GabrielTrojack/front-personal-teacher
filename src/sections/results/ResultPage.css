@@ -24,7 +24,8 @@
   display: flex;
   justify-content: space-between;
   gap: 30px;
-  padding: 0 30px;
+  padding: 0 50px;
+  margin-bottom: 2rem;
 }
 
 /* Caixas de conteúdo */
@@ -38,12 +39,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 30px;
+  padding: 20px;
+  padding-bottom: 5rem;
 }
 
 /* Títulos principais */
 .result h1, .result h2 {
   color: #1f3a59;
+  margin: 0.5rem 2rem;
 }
 
 .result .title-result h1 {
@@ -57,21 +60,23 @@
 }
 
 .result p {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: #1f3a59;
+  margin: 1rem 2rem;
 }
 
 /* Gráficos de progresso */
 .result .grafico {
-  width: 100%;
+  margin-left: 2rem;
+  width: 85%;
   height: 20px;
   background-color: #f0f0f0;
   border-radius: 10px;
 }
 
 .result .barra {
-  height: 100%;
+  height: 85%;
   background-color: #03CEA4;
   border-radius: 10px;
 }
@@ -89,31 +94,81 @@
   font-weight: bold;
 }
 
-/* Botão de ação */
 .result .finalizar-btn-container {
   display: flex;
   justify-content: center;
+  align-items: center;      
+  width: 100%;              
 }
 
-.result .finalizar-btn {
-  background-color: #03CEA4;
-  color: white;
-  font-size: 1.2rem;
-  padding: 15px 30px;
+.Documents-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 80px;
   border: none;
-  border-radius: 5px;
+  padding: 10px 60px;
+  border-radius: 18px;
+  background: linear-gradient(45deg, #7ed957, #00b29d);
+  box-shadow: #3caa6e 0px 10px 0px 0px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  font-weight: bold;
+  transition: background 0.3s ease-in-out;
 }
-
-.result .finalizar-btn:hover {
-  background-color: #04b591;
-  transform: scale(1.05);
+.folderContainer {
+  width: 55px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
 }
-
-.result .finalizar-btn:focus {
-  outline: none;
+.fileBack {
+  z-index: 1;
+  width: 80%;
+  height: auto;
+}
+.filePage {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  z-index: 2;
+  transition: all 0.3s ease-out;
+}
+.fileFront {
+  width: 85%;
+  height: auto;
+  position: absolute;
+  z-index: 3;
+  opacity: 0.95;
+  transform-origin: bottom;
+  transition: all 0.3s ease-out;
+}
+.result .text-btn {
+  font-family: "Outfit", sans-serif;
+  opacity: 100%;
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+}
+.Documents-btn:hover .filePage {
+  transform: translateY(-5px);
+}
+.Documents-btn:hover {
+  background: linear-gradient(20deg, #88e660, #05bba5);
+  box-shadow: #3caa6e 0px 7px 0px 0px;
+  transform: translateY(2px); 
+  transition: all 0.05s ease-out;
+}
+.Documents-btn:active {
+  box-shadow: #3caa6e 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 200ms;
+}
+.Documents-btn:hover .fileFront {
+  transform: rotateX(30deg);
 }
 
 /* Responsividade */
@@ -171,7 +226,7 @@
   background-color: #fff;
   padding: 15px;
   border-radius: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 

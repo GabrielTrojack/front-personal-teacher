@@ -93,7 +93,7 @@ body {
     color: #4b5563;
 }
 
-button {
+.login-container button {
     width: 80%;
     background-color: #2B59C3;
     color: white;
@@ -107,7 +107,7 @@ button:hover {
     background-color: #1d4ed8;
 }
 
-p {
+.login-container p {
     display: inline-flex;
     justify-content: space-between;
     margin-right: 4.5rem;

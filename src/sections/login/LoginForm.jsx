@@ -28,6 +28,7 @@ function LoginForm () {
 
     return(
         <div className="login-container">
+
         <div className="login-image-section">
             <img src={LoginIcon} alt="Estudante estudando"/>
         </div>
