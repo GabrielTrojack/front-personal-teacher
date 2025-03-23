@@ -1,11 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Exam.css';
 import SEAPicon from './../../assets/public/SEAP.svg';
 import SEAPBG from './../../assets/public/seap-background.svg';
-import { Link } from 'react-router-dom';
 import QuestionTXT from '../../components/question-txt/question-txt';
+import Popup from '../../components/choose-up/popup';
+import { useParams } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function Exam() {
+  
+  const { subject } = useParams(); // Pega o parâmetro da URL
+  const [showPopup, setShowPopup] = useState(false);  //Estados para o popup de escolher disciplina 
+
+  useEffect(() => {
+    // Verifique se o parâmetro da matéria não é indefinido (caso o pop-up tenha sido fechado anteriormente)
+    if (!subject) {
+      setShowPopup(true); // Exibe o pop-up se a matéria não estiver selecionada
+    }
+  }, [subject]);
+
+  // Função chamada quando o pop-up começa
+  const handleStart = (subject) => {
+    setShowPopup(false); // Fecha o pop-up quando o usuário clica em "Começar"
+  };
+
   /* Estados para manter as alternativas selecionadas*/
   const [selectedAnswer1, setSelectedAnswer1] = useState('');
   const [selectedAnswer2, setSelectedAnswer2] = useState('');
@@ -15,6 +33,8 @@ function Exam() {
   const handleAnswerChange2 = (event) => setSelectedAnswer2(event.target.value);
 
   return (
+  <div className='Exam-page'>
+        {showPopup && <Popup onStart={handleStart} />}
     <div className="Exam">
       {/* Fundo da SEAP */}
       <div className="SEAPback">
@@ -80,6 +100,7 @@ function Exam() {
         {/* Simulado de Exame de Avaliação de Produtividade */}
         <div className="content-box">
           <h1>Simulado de Exame de Avaliação de Produtividade:</h1>
+          <h2 className='title-select'>{subject === "portugues" ? "PROVA DE LINGUAGENS, CÓDIGOS E SUAS TECNOLOGIAS" : "PROVA DE MATEMÁTICA E SUAS TECNOLOGIAS"}</h2>
 
           {/* Questão 1 */}
         <QuestionTXT/>
@@ -126,6 +147,7 @@ function Exam() {
           </div>
         </Link>
       </main>
+    </div>
     </div>
   );
 }

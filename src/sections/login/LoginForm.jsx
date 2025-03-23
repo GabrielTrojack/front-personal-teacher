@@ -6,6 +6,7 @@ import LoginIcon from "./../../assets/public/login-icon.svg";
 function LoginForm () {
     return(
         <div className="login-container">
+
         <div className="login-image-section">
             <img src={LoginIcon} alt="Estudante estudando"/>
         </div>
@@ -24,8 +25,8 @@ function LoginForm () {
               <input type="checkbox" id="terms" />
               <label htmlFor="terms">Lembrar de mim</label>
             </div>
-            <Link to="/exam">
-            <button type="submit">LOGIN</button>
+            <Link to="/">
+            <button type="button">LOGIN</button>
             </Link>
           </form>
           <Link to="/reset">

@@ -85,6 +85,10 @@ body {
   animation: fadeIn 1.5s ease-in-out;
 }
 
+.title-select {
+  margin: 0 0 2rem 0;
+}
+
 /* ESTILOS DE TÍTULOS */
 .Exam h1, .Exam h2 {
   margin-left: 1rem;
@@ -184,7 +188,7 @@ blockquote {
   touch-action: manipulation;
   width: 100%;
   max-width: 70rem;
-  margin: 20px auto;
+  margin: 100px auto;
   display: block;
   text-align: center;
 }
@@ -213,9 +217,9 @@ blockquote {
   background: linear-gradient(
     to left,
     hsl(340deg 100% 16%) 0%,
-    hsl(340deg 100% 32%) 8%,
+    hsl(340, 100%, 32%) 8%,
     hsl(340deg 100% 32%) 92%,
-    hsl(340deg 100% 16%) 100%
+    #52001b 100%
   );
 }
 
@@ -228,7 +232,7 @@ blockquote {
   font-size: 2.3rem;
   letter-spacing: 0.25rem;
   color: white;
-  background: hsl(345deg 100% 47%);
+  background: hsl(345, 100%, 47%);
   will-change: transform;
   transform: translateY(-4px);
   transition: transform 600ms cubic-bezier(.3, .7, .4, 1);

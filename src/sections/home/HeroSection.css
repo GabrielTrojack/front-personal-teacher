@@ -7,9 +7,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 3.5rem;
-    gap: 3rem;
-    width: 90vw; 
+    padding: 4rem;
+    gap: 6rem;
+    width: 100vw; 
     max-width: 1200px;
     margin: 0 auto; 
 }
@@ -18,48 +18,54 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-left: 3.4rem;
-    margin-top: 5%;
-    width: 538px;
-    height: 165px;
+    width: 520px;
+    height: 160px;
     text-align: left;
-    line-height: 52px;
-    font-weight: 500;
+    line-height: 50px;
     font-size: 50px;
+    font-weight: 500;
     font-family: 'Akshar', sans-serif;
     text-transform: uppercase;
     color: #071E59;
 }
 
-.hero-content {
-    margin-left: -2rem;
+.hero-content .hero-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;      
+    width: 100%;
 }
 
 .hero-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
     font-family: 'Outfit', sans-serif;
     text-indent: 60px;
     font-weight: 290; 
     font-size: 20px;
     line-height: 24px;
-    width: 511px;
-    height: 109px;
     text-align: justify;
-    margin-top: 5px;
     color: white;
 }
 
-.hero-description + .hero-description {
-    margin-top: 0;
-}
+.hero-content .hero-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;      
+    width: 100%;              
+  }
 
 .hero-button {
+    overflow: hidden;
     text-decoration: none;
-    margin-top: 75px;
+    margin-top: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    width: 431px;
+    width: 430px;
     height: 58px;
     border: none;
     border-radius: 15px;
@@ -71,23 +77,47 @@
     text-transform: uppercase;
     font-family: 'Akshar', sans-serif;
     transition: background 0.3s ease-in-out;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
+
+.hero-button .play-icon {
+    margin-right: 8px;
+    width: 32px;
+    height: 32px;
+    transition: all 0.5s ease-in-out;
+  }
 
 .hero-button:hover {
     background-color: #39e0be;
 }
 
-.hero-button-container {
-    display: flex;
-    margin-left: 38px;
+.hero-button:hover .text-btn {
+    transform: translateX(305px);
 }
 
-.play-icon {
-    margin-bottom: 4px;
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-}    
+.text-btn {
+    transition: all 0.5s ease-in-out;
+}
+
+.hero-button:hover .play-icon {
+    transform: translate(110px);
+}
+
+.hero-button:active {
+    transform: translateY(3px);
+    box-shadow:
+      inset 0 16px 2px -15px rgba(0, 0, 0, 0),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+      inset 0 1px 20px rgba(0, 0, 0, 0.1),
+      0 0 0 #0f988e,
+      0 0 0 2px rgba(0, 0, 0, 0.1),
+      0 0 0 rgba(0, 0, 0, 0),
+      0 0 0 rgba(0, 0, 0, 0);
+}
+
+.hero-button-container {
+    display: flex;
+}
 
 .hero-image-container {
     width: 600px;

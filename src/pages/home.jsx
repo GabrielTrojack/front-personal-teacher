@@ -9,7 +9,6 @@ import WaveAnimation from "../sections/common/WaveAnimation";
 import FeatureSection from "../sections/home/FeatureSection";
 
 const Home = () => {
-
     return (
         <div>
             <Navbar />

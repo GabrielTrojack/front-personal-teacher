@@ -1,5 +1,5 @@
 body {
-    background-color: #2B59C3;
+    background-color: #2b59c3;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,11 +92,11 @@ body {
     color: #4b5563;
 }
 
-button {
+.signup-container button {
     width: 80%;
     background-color: #2B59C3;
     color: white;
-    padding: 1rem;
+    padding: 1.5rem;
     margin-left: 3rem;
     border: none;
     cursor: pointer;
@@ -107,6 +107,7 @@ button:hover {
 }
 
 .signup-p {
+    text-decoration: none;
     align-items: center;
     justify-content: center;
     margin-left: 3rem;

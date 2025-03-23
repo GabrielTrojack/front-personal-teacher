@@ -19,11 +19,11 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/reset" element={<Forgot/>} />
         <Route path="/result" element={<Results/>} />
-        <Route path="/exam" element={<Exam/>} />
+        <Route path="/exam/:subject" element={<Exam/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
-  );
+  );  
 }
 
 export default App;
