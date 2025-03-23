@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from "../../assets/logo.png";
@@ -8,6 +8,7 @@ const Navbar = () => {
   const token = localStorage.getItem('token');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate()
+  useEffect(()=>{},[token])
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -18,21 +19,24 @@ const Navbar = () => {
   };  
 
   const handleLogout = () => {
-    console.log('Clicou no botão de logout!');
-    localStorage.clear();
     alert('Você foi deslogado!');
     closeModal(); 
     navigate('/home ')
+    localStorage.clear();
+    window.location.reload();
   };
+
+  const handleHome = () =>{
+    document.title = "Personal Teacher";
+    navigate('/home')
+  }
   
 
   return (
     <nav className="navbar">
-      <Link to='/home'>
-        <div className="logo">
+        <div onClick={handleHome} className="logo">
           <img src={logo} alt="Logo" />
         </div>
-      </Link>
       <div className="nav-links">
         <a href="#sobre">Sobre</a>
       </div>

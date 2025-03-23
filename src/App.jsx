@@ -6,6 +6,7 @@ import Login from './pages/login';
 import Forgot from './pages/forgotpass';
 import NotFound from './pages/404page';
 import Results from './pages/results';
+import ExamSelect from './pages/examselect';
 import Exam from './pages/exam';
 import './index.css';
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/reset" element={<Forgot/>} />
         <Route path="/result" element={<Results/>} />
         <Route path="/exam" element={<Exam/>} />
+        <Route path="/examSelect" element={<ExamSelect/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

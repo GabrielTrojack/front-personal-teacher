@@ -16,7 +16,7 @@
                 <p className="hero-description">Com uma abordagem interativa e inteligente, oferecemos a você um plano de estudo adaptado às suas necessidades. Torne o aprendizado mais envolvente e eficaz. Transforme suas dificuldades em oportunidades e conquiste seus objetivos com uma experiência de estudo que realmente faz a diferença.</p>
                 
                 <div className="hero-button-container">
-                    <Link to={token?"/exam":"/login"} style={{ textDecoration: 'none' }}>
+                    <Link to={token?"/examSelect":"/login"} style={{ textDecoration: 'none' }}>
                     <button className="hero-button">
                     <img src={PlayIcon} alt="Play" className="play-icon" />
                     Começar jornada</button>

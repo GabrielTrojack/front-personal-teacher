@@ -26,7 +26,7 @@ function SignupForm () {
       if (password===confirmpassword) {
         await api.post('/auth/register', data);
         alert("Cadastro realizado com sucesso!!");
-        navigate('/home')
+        navigate('/login')
       }else{
         alert("As senhas devem ser iguais!!");
       }

@@ -165,7 +165,6 @@ blockquote {
   padding-left: 20px;
   font-size: 1.1rem;
   line-height: 1.6;
-  color: black;
 }
 
 .alternativa strong {
@@ -192,39 +191,6 @@ blockquote {
   margin: 20px auto;
   display: block;
   text-align: center;
-  
-}
-.button-lpdisable {
-  position: relative;
-  border: none;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-  outline-offset: 4px;
-  transition: filter 250ms;
-  user-select: none;
-  touch-action: manipulation;
-  width: 100%;
-  max-width: 70rem;
-  margin: 20px auto;
-  display: block;
-  text-align: center;
-  display: block;
-  position: flex;
-  padding: 2rem 5rem;
-  border-radius: 1.5rem;
-  font-family: "Akshar", sans-serif;
-  font-size: 2.3rem;
-  letter-spacing: 0.25rem;
-  color: white;
-  background: hsl(345, 100%, 67%);
-  will-change: transform;
-  transform: translateY(-4px);
-  transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
-}
-.button-lpdisable:hover {
-  background: hsl(345, 100%, 67%);
-  cursor: default;
 }
 
 /* Efeitos de sombra e borda do botão */
@@ -317,10 +283,6 @@ blockquote {
 
 .texto-materia{
   font-size: 18px;
-}
-
-.warning-msg{
-  color: red;
 }
 
 /* ESTILOS RESPONSIVOS */
