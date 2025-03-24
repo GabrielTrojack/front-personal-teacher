@@ -42,7 +42,7 @@ function ResultPage() {
             <h2 className="disciplin">Probabilidade:</h2>
             <p>Acertos: 38%</p>
             <div className="grafico">
-              <div className="barra" style={{ width: '38%' }}></div>
+              <div className="barra" style={{ width: '36%' }}></div>
             </div>
           </section>
 
