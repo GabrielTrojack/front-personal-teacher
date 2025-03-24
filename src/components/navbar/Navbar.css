@@ -3,14 +3,17 @@
   display: flex;
   justify-content: space-between; 
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px 0;
   background-color: #2B59C3;
+  width: 100%;
 }
 
 .logo img {
   margin-left: 1rem;
   height: 70px;
   cursor: pointer;
+  height: 70px;
+  margin-left: 2rem; 
 }
 
 .nav-links {
@@ -64,6 +67,7 @@
   font-family: 'Outfit', sans-serif;
   letter-spacing: 0.08rem;
   margin-left: 10px;
+  margin-right: 3rem;
   display: inline-flex;
   align-items: center; 
   justify-content: center; 
