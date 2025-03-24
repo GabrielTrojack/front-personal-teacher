@@ -9,6 +9,9 @@ import NotFound from './pages/404page';
 import Results from './pages/results';
 import ExamSelect from './pages/examselect';
 import Exam from './pages/exam';
+import About from './pages/about'
+import Privacy from './pages/privacy';
+import Terms from './pages/terms'
 import './index.css';
 
 function App() {
@@ -26,6 +29,9 @@ function App() {
         <Route path="/examSelect" element={<ExamSelect/>} />
         {/* <Route path="/exam/:subject" element={<Exam/>} /> */}
         <Route path="*" element={<NotFound />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/privacy-policy" element={<Privacy/>} />
+        <Route path="/terms" element={<Terms />} />
       </Routes>
     </Router>
   );  

@@ -38,7 +38,7 @@ const Navbar = () => {
 
   const handleSobre = () => {
     document.title = "Personal Teacher";
-    navigate('/#')
+    navigate('/about')
   }
 
   const handleResults = () => {
@@ -53,7 +53,7 @@ const Navbar = () => {
         <img src={logo} alt="Logo" />
       </div>
       <div onClick={handleSobre} className="nav-links">
-        <a href="#sobre">Sobre</a>
+        <a>Sobre</a>
       </div>
 
       {token ?

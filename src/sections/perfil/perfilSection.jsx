@@ -92,6 +92,7 @@ function PerfilSection() {
 
 
     return (
+            <div className="test-content">
         <div className="perfil">
             <div className="perfil-container">
                 <h1>Olá {nome},</h1>
@@ -121,6 +122,7 @@ function PerfilSection() {
 
 
                 <BacktoTop />
+            </div>
             </div>
         </div>
     );
