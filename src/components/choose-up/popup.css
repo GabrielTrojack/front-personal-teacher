@@ -1,0 +1,190 @@
+.popup-container {
+    position: fixed; /* Posiciona o pop-up de forma fixa na tela */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, 40%); /* Começa mais abaixo */
+    transition: transform 0.5s ease-out, opacity 0.4s ease-out; /* Transição suave do movimento */
+    width: 100%;
+    max-width: 750px; /* Largura máxima do pop-up */
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px;
+    z-index: 10000;
+    padding: 60px 50px;
+    border-radius: 30px;
+    display: flex;
+    transition: opacity 0.4 ease-out;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0); /* Fundo mais escuro */
+    z-index: 999;
+    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+    transition: background-color 0.5s ease, backdrop-filter 0.5s ease; /* Transição suave */
+}
+
+.popup-container .card {
+    width: 100%; /* O card ocupa toda a largura do pop-up */
+    padding-bottom: 5rem;
+    border-radius: 10px;
+    background-color: #fff;
+}
+    
+.popup-container .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.popup-container h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    margin-bottom: 1.5rem;
+}
+
+.popup-container p {
+    display:block;
+    cursor: auto ;
+    margin: 0;
+    color: black;
+    opacity: 100%;
+    font-size: 15px;
+}
+
+.info-container {
+    margin: 2rem 0;
+    text-align: justify;
+    line-height: 25px;
+}
+
+.checkbox-container {
+    display: inline-block; /* Faz o checkbox ficar ao lado de outro */
+    margin-right: 10px; /* Adiciona um espaço entre os checkboxes */
+}
+    
+.checkbox-container input {
+    margin-right: 5px; /* Ajusta o espaço entre o checkbox e o texto */
+}
+    
+.label {
+    display: inline-flex;
+    align-items:center;
+    border-radius: 100px;
+    padding: 20px 20px;
+    margin: 35px 30px 0 0;
+    cursor: pointer;
+    transition: .3s;
+}
+    
+.label:hover,
+.label:focus-within,
+.label:active {
+    background: hsla(0, 0%, 80%, .14);
+}
+    
+.radio-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    z-index: -1;
+}
+    
+.radio-design {
+    width: 22px;
+    height: 22px;
+    border-radius: 100px;
+    background: linear-gradient(to right bottom, hsl(154, 97%, 62%), hsl(225, 97%, 62%));
+    position: relative;
+}
+    
+.radio-design::before {
+    content: '';
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background: hsl(0, 0%, 75%);
+    transform: scale(1.1);
+    transition: .3s;
+}
+    
+.radio-input:checked+.radio-design::before {
+    transform: scale(0);
+}
+    
+.label-text {
+    color: hsl(0, 0%, 20%);
+    margin-left: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 900;
+    transition: .3s;
+}
+    
+.radio-input:checked~.label-text {
+    color: hsl(0, 0%, 40%);
+}
+
+.exit-logo {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 10000;
+    cursor: pointer;
+}
+
+.exit-logo img {
+    width: 20px;
+     height: 20px;
+}
+
+.popup-container .str-button {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    width: auto;
+    margin: 0;
+    background-color: #f0003c;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px 20px;
+    border-radius: 2em;
+    cursor: pointer;
+    transition: 0.1s ease;
+    border-width: 0;
+    box-shadow: 1px 5px 0 0 #5d0e0e;
+}
+    
+.str-button:hover {
+        transform: translateY(-4px);
+        box-shadow: 1px 9px 0 0 #5d0e0e;
+}
+    
+.str-button:active {
+        transform: translateY(4px);
+        box-shadow: 0px 0px 0 0 #0e285d;
+}
+
+/* Quando o pop-up estiver visível, ativa a animação */
+.popup-container.show {
+    transform: translate(-50%, -50%); /* Move o pop-up para o centro */
+    opacity: 1;
+}
+  
+.popup-overlay.show {
+    background-color: rgba(0, 0, 0, 0.6); /* Escurece o fundo */
+}

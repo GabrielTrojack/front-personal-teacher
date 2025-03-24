@@ -1,0 +1,244 @@
+/* Animação FadeIn */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Estilos gerais da página */
+.result {
+  background-image: url('./../../assets/public/seap-background.svg');
+  background-color: #A1B5D8;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Container principal */
+.result .main-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 0 50px;
+  margin-bottom: 2rem;
+}
+
+/* Caixas de conteúdo */
+.result .content-box {
+  background-color: #fff;
+  width: 50%;
+  box-sizing: border-box;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  color: #333;
+  animation: fadeIn 1.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  padding-bottom: 5rem;
+}
+
+/* Títulos principais */
+.result h1, .result h2 {
+  color: #1f3a59;
+  margin: 0.5rem 2rem;
+}
+
+.result .title-result h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.result .disciplin h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.result p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #1f3a59;
+  margin: 1rem 2rem;
+}
+
+/* Gráficos de progresso */
+.result .grafico {
+  margin-left: 2rem;
+  width: 85%;
+  height: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+
+.result .barra {
+  height: 85%;
+  background-color: #03CEA4;
+  border-radius: 10px;
+}
+
+/* Caixa de aviso */
+.result .aviso {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.result .aviso strong {
+  font-weight: bold;
+}
+
+.result .finalizar-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;      
+  width: 100%;              
+}
+
+.Documents-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 80px;
+  border: none;
+  padding: 10px 60px;
+  border-radius: 18px;
+  background: linear-gradient(45deg, #7ed957, #00b29d);
+  box-shadow: #3caa6e 0px 10px 0px 0px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+.folderContainer {
+  width: 55px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+.fileBack {
+  z-index: 1;
+  width: 80%;
+  height: auto;
+}
+.filePage {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  z-index: 2;
+  transition: all 0.3s ease-out;
+}
+.fileFront {
+  width: 85%;
+  height: auto;
+  position: absolute;
+  z-index: 3;
+  opacity: 0.95;
+  transform-origin: bottom;
+  transition: all 0.3s ease-out;
+}
+.result .text-btn {
+  font-family: "Outfit", sans-serif;
+  opacity: 100%;
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+}
+.Documents-btn:hover .filePage {
+  transform: translateY(-5px);
+}
+.Documents-btn:hover {
+  background: linear-gradient(20deg, #88e660, #05bba5);
+  box-shadow: #3caa6e 0px 7px 0px 0px;
+  transform: translateY(2px); 
+  transition: all 0.05s ease-out;
+}
+.Documents-btn:active {
+  box-shadow: #3caa6e 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 200ms;
+}
+.Documents-btn:hover .fileFront {
+  transform: rotateX(30deg);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .result .main-container {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .result .content-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .result .content-box {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .result h1 {
+    font-size: 2rem;
+  }
+
+  .result .disciplin h2 {
+    font-size: 1.6rem;
+  }
+
+  .result h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .result .content-box {
+    padding: 15px;
+  }
+
+  .result h1 {
+    font-size: 1.8rem;
+  }
+
+  .result h2 {
+    font-size: 1.4rem;
+  }
+
+  .result h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Estilos das caixas de tempo */
+.result .tempo-item {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.result .tempo-item h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #1f3a59;
+  margin-bottom: 10px;
+}
+
+.result .tempo-item .tempo-value p {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #1f3a59;
+}

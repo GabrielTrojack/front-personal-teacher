@@ -1,0 +1,36 @@
+
+.solid-ground {
+    position: absolute;
+    right: 0;
+    padding-left: 30rem;
+    padding-right: 8rem;
+    margin-top: 23rem;
+    margin-left: 0;
+    width: 100rem; 
+    height: 40rem;
+    background-color: #FFEECF;
+    transform: rotate(200deg);
+    z-index: -10;
+    background-size: cover;
+}
+
+.background-two {
+    position: absolute;
+    top: 100rem;
+    padding: 2rem;
+    left: 0;
+    width: 100vw;
+    height: 100%; 
+    z-index: -10;
+    background-color: #FFEECF;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .background-two {
+      flex-direction: column;
+    }
+    .background-two {
+      max-width: 100%;
+    }
+  }

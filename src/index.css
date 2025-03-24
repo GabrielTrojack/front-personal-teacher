@@ -1,0 +1,28 @@
+body {
+text-decoration: none;
+overflow-x: hidden;
+background-color:  #2B59C3;
+margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Animação de Zoom-In */
+@keyframes zoomIn {
+    0% {
+      transform: scale(0.9); /* Começa pequeno */
+      opacity: 0.5; /* Inicialmente invisível */
+    }
+    100% {
+      transform: scale(1); /* Tamanho normal */
+      opacity: 1; /* Fica visível */
+    }
+  }
+  
+  /* Aplica a animação no container do formulário */
+  .signup-container, .login-container, .container-reset {
+    animation: zoomIn 0.5s ease-in-out; /* Animação suave */
+  }
+  
