@@ -1,11 +1,16 @@
 .perfil {
-    width: 100%;
-    padding: 130px 20px 30px;
+    padding: 100px 20px 30px;
     animation: fadeIn 1s ease-in-out;
     box-sizing: border-box;
     overflow-x: hidden;
   }
   
+  .test-content {
+    background-color: #2B59C3;
+    min-height: 100vh;
+    width: 100vw;
+  }
+
   .perfil-container {
     background-color: white;
     border-radius: 20px;

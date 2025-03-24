@@ -4,7 +4,9 @@ import ExamTip from "../../components/examtip/examtip";
 import BacktoTop from "../../components/backtotop/btop";
 
 function PerfilSection () {
+
     return(
+            <div className="test-content">
         <div className="perfil">
             <div className="perfil-container">
                 <h1>Olá @xxxxxxx,</h1>
@@ -14,6 +16,7 @@ function PerfilSection () {
                 <ExamTip/>
                 <ExamTip/>
                 <BacktoTop/>
+            </div>
             </div>
         </div>
     );

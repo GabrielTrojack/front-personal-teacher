@@ -10,9 +10,7 @@ const Perfil = () => {
     return (
         <div>
             <Navbar />
-            <div>
             <PerfilSection />
-            </div>
             <Footer color="#2B59C3"/>
         </div>
     );
