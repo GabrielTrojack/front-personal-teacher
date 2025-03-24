@@ -85,10 +85,6 @@ body {
   /* animation: fadeIn 1.5s ease-in-out; */
 }
 
-.title-select {
-  margin: 0 0 2rem 0;
-}
-
 /* ESTILOS DE TÍTULOS */
 .Exam h1, .Exam h2 {
   margin-left: 1rem;
@@ -169,7 +165,6 @@ blockquote {
   padding-left: 20px;
   font-size: 1.1rem;
   line-height: 1.6;
-  color: black;
 }
 
 .alternativa strong {
@@ -193,42 +188,9 @@ blockquote {
   touch-action: manipulation;
   width: 100%;
   max-width: 70rem;
-  margin: 100px auto;
-  display: block;
-  text-align: center;
-  
-}
-.button-lpdisable {
-  position: relative;
-  border: none;
-  background: transparent;
-  padding: 0;
-  cursor: not-allowed;
-  outline-offset: 4px;
-  transition: filter 250ms;
-  user-select: none;
-  touch-action: manipulation;
-  width: 100%;
-  max-width: 70rem;
   margin: 20px auto;
   display: block;
   text-align: center;
-  display: block;
-  position: flex;
-  padding: 2rem 5rem;
-  border-radius: 1.5rem;
-  font-family: "Akshar", sans-serif;
-  font-size: 2.3rem;
-  letter-spacing: 0.25rem;
-  color: white;
-  background: hsl(345, 100%, 67%);
-  will-change: transform;
-  transform: translateY(-4px);
-  transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
-}
-.button-lpdisable:hover {
-  background: hsl(345, 100%, 67%);
-  cursor: not-allowed;
 }
 
 /* Efeitos de sombra e borda do botão */
@@ -255,9 +217,9 @@ blockquote {
   background: linear-gradient(
     to left,
     hsl(340deg 100% 16%) 0%,
-    hsl(340, 100%, 32%) 8%,
+    hsl(340deg 100% 32%) 8%,
     hsl(340deg 100% 32%) 92%,
-    #52001b 100%
+    hsl(340deg 100% 16%) 100%
   );
 }
 
@@ -270,7 +232,7 @@ blockquote {
   font-size: 2.3rem;
   letter-spacing: 0.25rem;
   color: white;
-  background: hsl(345, 100%, 47%);
+  background: hsl(345deg 100% 47%);
   will-change: transform;
   transform: translateY(-4px);
   transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
@@ -321,10 +283,6 @@ blockquote {
 
 .texto-materia{
   font-size: 18px;
-}
-
-.warning-msg{
-  color: red;
 }
 
 /* ESTILOS RESPONSIVOS */

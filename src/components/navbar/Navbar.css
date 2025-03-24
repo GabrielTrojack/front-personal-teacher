@@ -9,6 +9,9 @@
 }
 
 .logo img {
+  margin-left: 1rem;
+  height: 70px;
+  cursor: pointer;
   height: 70px;
   margin-left: 2rem; 
 }
@@ -36,6 +39,23 @@
   color: #26ef8e; 
 }
 
+.user-link a {
+  color: #fff; 
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.05rem;
+  padding: 10px 15px; 
+  margin-right: 10px;
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center; 
+}
+
+.user-link a:hover {
+  color: #26ef8e; 
+}
+
 .login-btn {
   padding: 14px 35px;
   background-color: #000; 
@@ -59,3 +79,4 @@
 .login-btn:hover {
   background-color: #333; 
 }
+

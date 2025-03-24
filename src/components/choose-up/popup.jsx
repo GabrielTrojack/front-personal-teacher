@@ -3,39 +3,122 @@ import { useNavigate } from 'react-router-dom';
 import './popup.css';
 import exitLogo from "./../../assets/public/exit-btn.svg";
 
-const Popup = ({ onStart }) => {
-    const [subject, setSubject] = useState(""); // Estado para controlar a seleção da matéria
-    const [error, setError] = useState(""); // Estado para gerenciar mensagens de erro
-    const navigate = useNavigate(); // Para navegar para outras páginas
-    const popupRef = useRef(null); // Ref para o pop-up
-    const overlayRef = useRef(null); // Ref para o fundo
+const Popup = () => {
+    const [subject, setSubject] = useState(); 
+    const [error, setError] = useState(""); 
+    const navigate = useNavigate(); 
+    const popupRef = useRef(null); 
+    const overlayRef = useRef(null);
+    const token = localStorage.getItem('token');
+    const [materias, setMaterias] = useState([]);
+    const [nome, setNome] = useState('');
+    
+
+    useEffect(() => {
+            const fetchNome = async () => {
+              if (!token) {
+                console.error('Token não encontrado!');
+                return;
+              }
+        
+              try {
+                const response = await fetch('http://localhost:3333/exam/getUserName', {
+                  method: 'GET',
+                  headers: {
+                    'Authorization': token,  // Passa o token no cabeçalho
+                  },
+                });
+        
+                if (!response.ok) {
+                  const errorText = await response.text();
+                  console.error('Erro ao buscar o nome do usuário:', errorText);
+                  return;
+                }
+        
+                const data = await response.json();
+                setNome(data.username);  // Supondo que a resposta tem o campo `username`
+              } catch (error) {
+                console.error('Erro ao buscar nome:', error);
+              }
+            };
+        
+            fetchNome();
+          }, [token]);
+
+    useEffect(() => {
+        const fetchMaterias = async () => {
+          try {
+            const response = await fetch('http://localhost:3333/exam/getAllMaterias ', {
+              method: 'GET',
+              headers: { 'Authorization': token }
+            });
+        
+            const contentType = response.headers.get("content-type");
+            if (!contentType || !contentType.includes("application/json")) {
+              const text = await response.text();
+              console.error("Resposta inesperada (não é JSON):", text);
+              return;
+            }
+        
+            const data = await response.json();
+            setMaterias(data);
+          } catch (err) {
+            console.error("Erro ao buscar as matérias:", err);
+          }
+        };
+        fetchMaterias();
+      }, []);
+
+      const handleMateriaClick = async (materiaId) => {
+        try {
+          const response = await fetch('http://localhost:3333/exam/createExam', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': token,
+            },
+            body: JSON.stringify({ materiaId }),
+          });
+          if (!response.ok) {
+            console.error('Erro ao criar a prova:', await response.text());
+            return;
+          }
+    
+          const data = await response.json();
+          console.log('Prova criada com sucesso, ID da prova:', data.id);
+          const provaId = data.id;
+
+          console.log(provaId);
+    
+          navigate(`/exam?examId=${provaId}`)
+    
+        } catch (error) {
+          console.error('Erro ao criar a prova:', error);
+        }
+      };
     
     const handleSubjectChange = (e) => {
-        setSubject(e.target.value); // Atualiza a matéria selecionada
-        setError(""); // Limpa o erro quando uma nova opção é selecionada
+        setSubject(parseInt(e.target.value)); 
+        setError(""); 
     };
     
     const handleStartClick = () => {
-        if (subject) onStart(subject); // Passa a matéria selecionada para o método onStart
+        if (subject) handleMateriaClick(subject); 
         else setError("Por favor, selecione uma matéria antes de começar!");
     };
 
     const handleExitClick = () => {
-        const confirmExit = window.confirm("Tem certeza que deseja sair?");
-        if (confirmExit) {
-         window.location.reload(); // Recarrega a página
-        }
+         window.location.reload();
     };
 
-      //Ativar a animação quando o pop-up entrar na tela
       useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('show'); // Adiciona a classe 'show' quando o elemento entra na tela
+                    entry.target.classList.add('show'); 
                 }
             });
-        }, { threshold: 0.1 }); // 10% do pop-up precisa estar visível para acionar a animação
+        }, { threshold: 0.1 }); 
         
         if (popupRef.current && overlayRef.current) {
             observer.observe(popupRef.current);
@@ -44,7 +127,7 @@ const Popup = ({ onStart }) => {
         
         return () => {
             if (popupRef.current && overlayRef.current) {
-                observer.disconnect(); // Desconecta o observer quando o componente for desmontado
+                observer.disconnect();
             }
         };
     }, []);
@@ -53,7 +136,7 @@ const Popup = ({ onStart }) => {
         <div className="popup-overlay" ref={overlayRef}>
         <div className="popup-container" ref={popupRef}>
             <div className="card">
-                <h1 className="title-nickname">Olá @xxxxxxx!</h1>
+                <h1 className="title-nickname">Olá {nome}!</h1>
 
                 <p>Para iniciar sua avaliação, escolha a área do conhecimento que deseja realizar:</p>
 
@@ -62,32 +145,28 @@ const Popup = ({ onStart }) => {
                 </div>
 
                 <div className="checkmark-book">
-                <label className="label">
-                    <input 
-                    type="radio" 
-                    value="portugues" 
-                    name="subject" 
-                    className="radio-input" 
-                    onChange={handleSubjectChange}
-                    />
-                    <div className="radio-design"></div>
-                    <div className="label-text">Português</div>
-                </label>
 
-                <label className="label">
+        {materias.length > 0 ? (
+          materias.map((materia) => (
+            <label className="label" key={materia.id}>
                     <input 
                     type="radio" 
-                    value="matematica" 
+                    value={materia.id}
                     name="subject" 
                     className="radio-input" 
-                    onChange={handleSubjectChange}
+                    onChange={(e)=>handleSubjectChange(e)}
                     />
                     <div className="radio-design"></div>
-                    <div className="label-text">Matemática</div>
+                    <div className="label-text">{materia.materia}</div>
                 </label>
+          ))
+        ) : (
+            <p className='texto-materia'>Carregando matérias...</p>
+        )}
+
                 <div className="info-container">
                 <p><strong>Leitura das orientações:</strong> Para uma experiência mais tranquila, leia as orientações que serão apresentadas logo após o início da avaliação.</p>
-                <p><strong>Questões da avaliação:</strong> A prova é composta por <strong>20</strong> questões, que são selecionadas aleatoriamente a cada tentativa.</p>
+                <p><strong>Questões da avaliação:</strong> A prova é composta por <strong>21</strong> questões, que são selecionadas aleatoriamente a cada tentativa.</p>
                 <p><strong>Tempo de avaliação:</strong> Você terá <strong>2 horas e 30 minutos</strong> para completar todas as questões.</p>
                 <p><strong>Finalização:</strong> Quando terminar, clique no botão <strong>"Finalizar"</strong> para enviar suas respostas.</p>
                 </div>

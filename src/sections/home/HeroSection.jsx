@@ -8,24 +8,23 @@
     import Popup from "../../components/choose-up/popup";
 
     const HeroSection = () => {
+        const token = localStorage.getItem('token')
 
         const [showPopup, setShowPopup] = useState(false);
         const navigate = useNavigate();
 
         const handleLoginClick = (e) => {
-          e.preventDefault(); // Impede o envio do formulário
-          setShowPopup(true); // Exibe o popup após o redirecionamento
+          e.preventDefault();
+          token?setShowPopup(true):navigate('/login'); 
         };
       
-        // Função chamada quando o pop-up começa (usuario escolhe a materia)
         const handlePopupStart = (subject) => {
-          setShowPopup(false); // Fecha o pop-up
-          navigate(`/exam/${subject}`); // Passa a matéria selecionada como parâmetro na URL
+          setShowPopup(false);
+          navigate(`/exam/${subject}`);
         };
 
         return (
             <section className="hero-section">
-                 {/* Exibe o pop-up quando showPopup for true */}
                 {showPopup && <Popup onStart={handlePopupStart} />} 
                 <div className="hero-content">
                 <h1 className="hero-title">Descubra o caminho certeiro para o sucesso no ENEM e Vestibulares!</h1>

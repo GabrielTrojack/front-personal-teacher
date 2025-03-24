@@ -1,9 +1,31 @@
-import React from "react";
+import React, {useState} from "react";
 import "./LoginForm.css";
 import { Link } from 'react-router-dom';
 import LoginIcon from "./../../assets/public/login-icon.svg";
+import api from "./../../services/api"
+import { useNavigate } from "react-router-dom";
 
 function LoginForm () {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const navigate = useNavigate()
+
+    async function handleLogin() {
+      const data = {
+        username,
+        password
+      }
+      try {
+          const response = await api.post('auth/LOGIN',data)
+          const token = response.data.token
+          localStorage.setItem('token', token)
+          console.log(token)
+          navigate('/')
+        } catch (err) {
+          alert(err.response.data.message)
+        }
+    }
+
     return(
         <div className="login-container">
 
@@ -12,23 +34,36 @@ function LoginForm () {
         </div>
         <div className="login-section">
           <h2>Bem-vindo de volta!</h2>
-          <form>
             <div className="login-group">
               <label>Nome de usuário *</label>
-              <input type="text" placeholder="Insira seu nome de usuário" />
+              <input 
+              autoCapitalize="none"
+              value={username}
+              className="input"
+              onChange={e => setUsername(e.target.value)}
+              type="text" 
+              placeholder="Insira seu nome de usuário" 
+              />
             </div>
+
             <div className="login-group">
               <label>Senha *</label>
-              <input type="password" placeholder="Insira sua senha" />
+              <input 
+              type="password" 
+              placeholder="Insira sua senha" 
+              value={password}
+              className="input"
+              onChange={e => setPassword(e.target.value)}
+              />
             </div>
             <div className="form-group checkbox-group">
+
               <input type="checkbox" id="terms" />
               <label htmlFor="terms">Lembrar de mim</label>
             </div>
-            <Link to="/">
-            <button type="button">LOGIN</button>
-            </Link>
-          </form>
+            <button onClick={handleLogin}>LOGIN</button>
+
+
           <Link to="/reset">
           <p>Esqueceu a senha?</p>
           </Link>

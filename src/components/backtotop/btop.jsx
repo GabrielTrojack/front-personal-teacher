@@ -31,28 +31,28 @@ const BacktoTop = () => {
     return(
         <div className="btop">
             <button onClick={scrollToTop}>  
-            <div class="text">
+            <div className="text">
             <span>Back</span>
             <span>to</span>
             <span>top</span>
             </div>
-            <div class="clone">
+            <div className="clone">
             <span>Back</span>
             <span>to</span>
             <span>top</span>
             </div>
             <svg
-            stroke-width="2"
+            strokeWidth="2"
             stroke="currentColor"
             viewBox="0 0 24 24"
             fill="none"
-            class="h-6 w-6"
+            className="h-6 w-6"
             xmlns="http://www.w3.org/2000/svg"
             width="20px">
             <path
             d="M14 5l7 7m0 0l-7 7m7-7H3"
-            stroke-linejoin="round"
-            stroke-linecap="round"
+            strokeLinejoin="round"
+            strokeLinecap="round"
             ></path>
             </svg>
             </button>
