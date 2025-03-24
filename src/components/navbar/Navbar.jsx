@@ -21,14 +21,14 @@ const Navbar = () => {
   const handleLogout = () => {
     alert('Você foi deslogado!');
     closeModal();
-    navigate('/home ')
+    navigate('/')
     localStorage.clear();
     window.location.reload();
   };
 
   const handleHome = () => {
     document.title = "Personal Teacher";
-    navigate('/home')
+    navigate('/')
   }
 
   const handleLogin = () => {

@@ -15,10 +15,10 @@ const NotFoundForm = () => {
                 <h3>Nós não conseguimos encontrar o que você está procurando. Você pode voltar para a página anterior, visitar nossa página inicial ou nos contatar.</h3>
             </div>
             <div className="lost-button-container">
-                <Link to="/home">
+                <Link to="/">
                 <button className="lost-button">Página Inicial</button>
                 </Link>
-                <Link to="/home">
+                <Link to="/">
                 <button className="lost-button">Contate-nos</button>
                 </Link>
             </div>
