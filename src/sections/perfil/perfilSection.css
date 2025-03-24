@@ -1,0 +1,33 @@
+.perfil {
+    width: 100%;
+    padding: 130px 20px 30px;
+    animation: fadeIn 1s ease-in-out;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  
+  .perfil-container {
+    background-color: white;
+    border-radius: 20px;
+    padding: 100px;
+    max-width: 1200px;
+    height: auto;
+    margin-bottom: 1rem;
+    width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  .perfil-container h1, .perfil-container h2 {
+    margin: 0;
+    text-align: justify;
+  }
+
+  .perfil-container h1 {
+    margin-bottom: 2rem;
+  }
+
+  .perfil-container h2 {
+    font-weight: 400;
+  }

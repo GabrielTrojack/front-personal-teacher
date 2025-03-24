@@ -13,6 +13,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-helmet": "^6.1.0",
+    "react-lottie": "^1.2.10",
     "react-router-dom": "^7.4.0",
     "react-wavify": "^1.11.1"
   },
