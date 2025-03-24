@@ -43,7 +43,7 @@ const Navbar = () => {
 
   const handleResults = () => {
     document.title = "Personal Teacher";
-    navigate('/#')
+    navigate('/perfil')
   }
 
 
@@ -59,7 +59,7 @@ const Navbar = () => {
       {token ?
         <>
           <div onClick={handleResults} className="user-link">
-            <a href="#sobre">Meus resultados</a>
+            <a href="/perfil">Meus resultados</a>
           </div>
           <button onClick={openModal} className="login-btn">Sair</button>
         </> :

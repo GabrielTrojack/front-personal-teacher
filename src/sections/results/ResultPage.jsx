@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './ResultPage.css';
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function ResultPage() {
+  const navigate = useNavigate()
   const token = localStorage.getItem('token');
   const location = useLocation();
   const examId = location.state.examId;
@@ -87,6 +88,11 @@ function ResultPage() {
     }
   };
 
+  const handleResults = () => {
+    document.title = "Personal Teacher";
+    navigate('/perfil')
+  }
+
   return (
     <div className="result">
       <main className="main-container">
@@ -133,7 +139,7 @@ function ResultPage() {
           </section>
 
           <div className="finalizar-btn-container">
-            <button className="Documents-btn">
+            <button onClick={handleResults} className="Documents-btn">
               <span className="folderContainer">
                 <svg
                   className="fileBack"
