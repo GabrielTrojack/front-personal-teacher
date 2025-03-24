@@ -11,6 +11,39 @@ const Popup = () => {
     const overlayRef = useRef(null);
     const token = localStorage.getItem('token');
     const [materias, setMaterias] = useState([]);
+    const [nome, setNome] = useState('');
+    
+
+    useEffect(() => {
+            const fetchNome = async () => {
+              if (!token) {
+                console.error('Token não encontrado!');
+                return;
+              }
+        
+              try {
+                const response = await fetch('http://localhost:3333/exam/getUserName', {
+                  method: 'GET',
+                  headers: {
+                    'Authorization': token,  // Passa o token no cabeçalho
+                  },
+                });
+        
+                if (!response.ok) {
+                  const errorText = await response.text();
+                  console.error('Erro ao buscar o nome do usuário:', errorText);
+                  return;
+                }
+        
+                const data = await response.json();
+                setNome(data.username);  // Supondo que a resposta tem o campo `username`
+              } catch (error) {
+                console.error('Erro ao buscar nome:', error);
+              }
+            };
+        
+            fetchNome();
+          }, [token]);
 
     useEffect(() => {
         const fetchMaterias = async () => {
@@ -103,7 +136,7 @@ const Popup = () => {
         <div className="popup-overlay" ref={overlayRef}>
         <div className="popup-container" ref={popupRef}>
             <div className="card">
-                <h1 className="title-nickname">Olá @xxxxxxx!</h1>
+                <h1 className="title-nickname">Olá {nome}!</h1>
 
                 <p>Para iniciar sua avaliação, escolha a área do conhecimento que deseja realizar:</p>
 

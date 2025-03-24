@@ -130,7 +130,7 @@ function ResultPage() {
           <div className="tempo-item">
             <h2 className="text-content">Tempo restante:</h2>
             <div className="tempo-value">
-              <p>{formatTime(remainingHours, remainingMinutes)} minutos</p>
+              <p>{formatTime(remainingHours, remainingMinutes)}</p>
             </div>
           </div>
 

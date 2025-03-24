@@ -115,7 +115,7 @@ function PerfilSection() {
                         </div>
                     ))
                 ) : (
-                    <p className='texto-materia'>Carregando matérias...</p>
+                    <p className='texto-materia'>Não ha nada aqui ainda, faça uma prova primeiro...</p>
                 )}
 
 
