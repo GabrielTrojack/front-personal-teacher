@@ -20,7 +20,7 @@ function LoginForm () {
           const token = response.data.token
           localStorage.setItem('token', token)
           console.log(token)
-          navigate('/home')
+          navigate('/')
         } catch (err) {
           alert(err.response.data.message)
         }
