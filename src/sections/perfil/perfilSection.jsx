@@ -4,9 +4,94 @@ import "./perfilSection.css";
 import BacktoTop from "../../components/backtotop/btop";
 import { Link, useNavigate } from "react-router-dom";
 
-function PerfilSection () {
+function PerfilSection() {
+    const navigate = useNavigate()
+    const token = localStorage.getItem('token');
+    const [provas, setProvas] = useState([]);
+    const [nome, setNome] = useState('');
 
-    return(
+
+    useEffect(() => {
+        const fetchProvas = async () => {
+            try {
+                const response = await fetch(`http://localhost:3333/exam/getUserProvas`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': token,
+                    },
+                });
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error('Erro ao buscar provas:', errorText);
+                    return;
+                }
+                const data = await response.json();
+                setProvas(data);
+            } catch (error) {
+                console.error('Erro ao buscar provas:', error);
+            }
+        };
+        if (token) {
+            fetchProvas();
+        }
+    }, [token]);
+
+    useEffect(() => {
+        const fetchNome = async () => {
+          if (!token) {
+            console.error('Token não encontrado!');
+            return;
+          }
+    
+          try {
+            const response = await fetch('http://localhost:3333/exam/getUserName', {
+              method: 'GET',
+              headers: {
+                'Authorization': token,  // Passa o token no cabeçalho
+              },
+            });
+    
+            if (!response.ok) {
+              const errorText = await response.text();
+              console.error('Erro ao buscar o nome do usuário:', errorText);
+              return;
+            }
+    
+            const data = await response.json();
+            setNome(data.username);  // Supondo que a resposta tem o campo `username`
+          } catch (error) {
+            console.error('Erro ao buscar nome:', error);
+          }
+        };
+    
+        fetchNome();
+      }, [token]);
+
+    const handleResult = (examId) => {
+        navigate('/result', { state:{
+            examId: examId
+          }});
+    };
+
+
+    const formatarDataOuHora = (dataISO) => {
+        const agora = new Date();
+        const data = new Date(dataISO);
+        const diffHoras = (agora - data) / (1000 * 60 * 60);
+
+        if (diffHoras < 24) {
+            return `Prova feita às ${data.toLocaleTimeString('pt-BR', {
+                hour: '2-digit',
+                minute: '2-digit'
+            })}`;
+        } else {
+            return `Prova feita em ${data.toLocaleDateString('pt-BR')}`;
+        }
+    };
+
+
+    return (
             <div className="test-content">
         <div className="perfil">
             <div className="perfil-container">
