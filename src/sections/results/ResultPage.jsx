@@ -12,7 +12,7 @@ function ResultPage() {
 
   const fetchAcertosPorProva = async () => {
     try {
-      const response = await fetch(`http://localhost:3333/exam/getAcertosPorProva/${examId}`, {
+      const response = await fetch(`https://ps-back-hhat.onrender.com/exam/getAcertosPorProva/${examId}`, {
         method: 'GET',
         headers: {
           'Authorization': token,
@@ -40,7 +40,7 @@ function ResultPage() {
   useEffect(() => {
     const fetchProvaDuration = async () => {
       try {
-        const response = await fetch(`http://localhost:3333/exam/getProvaDuration/${examId}`, {
+        const response = await fetch(`https://ps-back-hhat.onrender.com/exam/getProvaDuration/${examId}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

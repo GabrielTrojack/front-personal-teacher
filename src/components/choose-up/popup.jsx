@@ -22,7 +22,7 @@ const Popup = () => {
               }
         
               try {
-                const response = await fetch('http://localhost:3333/exam/getUserName', {
+                const response = await fetch('https://ps-back-hhat.onrender.com/exam/getUserName', {
                   method: 'GET',
                   headers: {
                     'Authorization': token,  // Passa o token no cabeçalho
@@ -48,7 +48,7 @@ const Popup = () => {
     useEffect(() => {
         const fetchMaterias = async () => {
           try {
-            const response = await fetch('http://localhost:3333/exam/getAllMaterias ', {
+            const response = await fetch('https://ps-back-hhat.onrender.com/exam/getAllMaterias ', {
               method: 'GET',
               headers: { 'Authorization': token }
             });
@@ -71,7 +71,7 @@ const Popup = () => {
 
       const handleMateriaClick = async (materiaId) => {
         try {
-          const response = await fetch('http://localhost:3333/exam/createExam', {
+          const response = await fetch('https://ps-back-hhat.onrender.com/exam/createExam', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
