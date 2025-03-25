@@ -46,7 +46,7 @@ function Exam() {
   useEffect(() => {
     const fetchExamDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:3333/exam/getExamQuestions/${examId}`, {
+        const response = await fetch(`https://ps-back-hhat.onrender.com/exam/getExamQuestions/${examId}`, {
           method: 'GET',
           headers: { 'Authorization': token },
         });
@@ -104,7 +104,7 @@ function Exam() {
       });
 
     try {
-      const response = await fetch(`http://localhost:3333/exam/updateFimTempo/${examId}`, {
+      const response = await fetch(`https://ps-back-hhat.onrender.com/exam/updateFimTempo/${examId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -130,7 +130,7 @@ function Exam() {
             return;
           }
     
-          const secondresponse = await fetch(`http://localhost:3333/exam/updateAcertos/${examId}`, {
+          const secondresponse = await fetch(`https://ps-back-hhat.onrender.com/exam/updateAcertos/${examId}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
@@ -206,7 +206,36 @@ function Exam() {
 
         <div className="content-box">
           <h1 className="title-exam">Orientações para realizar a avaliação:</h1>
-          {/* Suas seções de instruções continuam aqui */}
+          <div className="content-box">
+          <h1 className="title-exam">Orientações para realizar a avaliação:</h1>
+
+          <section>
+            <h2 className="title-exam">1. Sobre a avaliação:</h2>
+            <ul>
+              <li>A avaliação é composta por 20 questões objetivas, com cinco alternativas (A, B, C, D, E), sendo apenas uma correta.</li>
+              <li>As questões são selecionadas de forma aleatória para cada tentativa, garantindo uma experiência única a cada avaliação.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="title-exam">2. Tempo de realização:</h2>
+            <ul>
+              <li>O tempo limite para completar a avaliação é de <strong>2 horas e 30 minutos</strong>.</li>
+              <li>Um cronômetro ficará visível na guia da aba do navegador para que você possa acompanhar o tempo restante.</li>
+              <li>Não se preocupe com pressão de tempo! A ideia é focar na análise do seu desempenho, mas fique atento ao cronômetro.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="title-exam">3. Foco:</h2>
+            <ul>
+              <li>Este é o seu momento de praticar e identificar suas forças e fraquezas.</li>
+              <li>Use essa avaliação como uma ferramenta de autoconhecimento para se aproximar ainda mais do seu sonho de entrar na faculdade!</li>
+              <li>Confie no seu potencial: cada questão respondida é um passo a mais rumo ao seu objetivo.</li>
+              <li>Lembre-se, o esforço de hoje abrirá portas para o futuro que você merece!</li>
+            </ul>
+          </section>
+        </div>
         </div>
 
         <div className="content-box">
