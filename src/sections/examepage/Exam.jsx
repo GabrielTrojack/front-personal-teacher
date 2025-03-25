@@ -206,13 +206,11 @@ function Exam() {
 
         <div className="content-box">
           <h1 className="title-exam">Orientações para realizar a avaliação:</h1>
-          <div className="content-box">
-          <h1 className="title-exam">Orientações para realizar a avaliação:</h1>
 
           <section>
             <h2 className="title-exam">1. Sobre a avaliação:</h2>
             <ul>
-              <li>A avaliação é composta por 20 questões objetivas, com cinco alternativas (A, B, C, D, E), sendo apenas uma correta.</li>
+              <li>A avaliação é composta por 21 questões objetivas, com cinco alternativas (A, B, C, D, E), sendo apenas uma correta.</li>
               <li>As questões são selecionadas de forma aleatória para cada tentativa, garantindo uma experiência única a cada avaliação.</li>
             </ul>
           </section>
@@ -235,7 +233,6 @@ function Exam() {
               <li>Lembre-se, o esforço de hoje abrirá portas para o futuro que você merece!</li>
             </ul>
           </section>
-        </div>
         </div>
 
         <div className="content-box">
