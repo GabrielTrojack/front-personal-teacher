@@ -1,16 +1,16 @@
 import React from "react";
-import AboutPage from "../sections/about/AboutCont";
+import PrivacyPage from "../sections/privacy/PrivacyPoli";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 
-const About = () => {
+const Privacy = () => {
     return(
         <div>
             <Navbar />
-            <AboutPage />
+            <PrivacyPage />
             <Footer color="#2B59C3"/>
         </div>
     );
 }
 
-export default About;
+export default Privacy;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Wavify from 'react-wavify';
 
-function WaveAnimation() {
+const WaveAnimation = ({customStyle}) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {

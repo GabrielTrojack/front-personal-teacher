@@ -1,16 +1,16 @@
 import React from "react";
-import AboutPage from "../sections/about/AboutCont";
+import TermsPage from "../sections/terms/TermsUse";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 
-const About = () => {
+const Terms = () => {
     return(
         <div>
             <Navbar />
-            <AboutPage />
+            <TermsPage />
             <Footer color="#2B59C3"/>
         </div>
     );
 }
 
-export default About;
+export default Terms;

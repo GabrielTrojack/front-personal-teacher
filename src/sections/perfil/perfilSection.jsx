@@ -14,7 +14,7 @@ function PerfilSection() {
     useEffect(() => {
         const fetchProvas = async () => {
             try {
-                const response = await fetch(`http://localhost:3333/exam/getUserProvas`, {
+                const response = await fetch(`https://ps-back-hhat.onrender.com/exam/getUserProvas`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ function PerfilSection() {
           }
     
           try {
-            const response = await fetch('http://localhost:3333/exam/getUserName', {
+            const response = await fetch('https://ps-back-hhat.onrender.com/exam/getUserName', {
               method: 'GET',
               headers: {
                 'Authorization': token,  // Passa o token no cabeçalho
@@ -92,6 +92,7 @@ function PerfilSection() {
 
 
     return (
+            <div className="test-content">
         <div className="perfil">
             <div className="perfil-container">
                 <h1>Olá {nome},</h1>
@@ -121,6 +122,7 @@ function PerfilSection() {
 
 
                 <BacktoTop />
+            </div>
             </div>
         </div>
     );

@@ -33,7 +33,7 @@
   background-color: #fff;
   width: 50%;
   box-sizing: border-box;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.15);
   color: #333;
   animation: fadeIn 1.5s ease-in-out;
   display: flex;
@@ -46,23 +46,28 @@
 /* Títulos principais */
 .result h1, .result h2 {
   color: #1f3a59;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0.5rem 2rem;
 }
 
 .result .title-result h1 {
   font-size: 2.4rem;
   font-weight: 600;
+  text-shadow:  2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .result .disciplin h2 {
   font-size: 1.8rem;
   font-weight: 500;
+  text-shadow:  2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .result p {
   font-size: 1.5rem;
   font-weight: 500;
   color: #1f3a59;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow:  2px 2px 5px rgba(0, 0, 0, 0.1);
   margin: 1rem 2rem;
 }
 
@@ -73,12 +78,14 @@
   height: 20px;
   background-color: #f0f0f0;
   border-radius: 10px;
+  box-shadow:  2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .result .barra {
   height: 85%;
   background-color: #03CEA4;
   border-radius: 10px;
+  box-shadow:  2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Caixa de aviso */
@@ -161,6 +168,14 @@
   box-shadow: #3caa6e 0px 7px 0px 0px;
   transform: translateY(2px); 
   transition: all 0.05s ease-out;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.result .finalizar-btn:hover {
+  background-color: #04b591;
+  transform: scale(1.05);
 }
 .Documents-btn:active {
   box-shadow: #3caa6e 0px 0px 0px 0px;
