@@ -1,4 +1,4 @@
-# 📚 Personal Teacher
+# Personal Teacher
 
 Bem-vindo ao repositório do Personal Teacher! Este é um projeto de uma plataforma de estudos inteligente e personalizada, desenvolvida para auxiliar estudantes em sua jornada de preparação para o ENEM e outros vestibulares.
 
@@ -23,21 +23,27 @@ Através de uma avaliação de desempenho inteligente com questões oficiais do 
 Nossa primeira versão já conta com uma interface simples, rápida e intuitiva, com as seguintes funcionalidades:
 
 **🏠 Home Page:** Apresentação inicial do projeto e do seu propósito.
+
 ![Home](./files/homesteps.gif)
 
 **👤 Cadastro e Login:** Área para que os usuários possam criar e acessar suas contas.
+
 ![Cadastro e Login](./files/login.gif)
 
 **📝 Página de Avaliação:** Ambiente onde o aluno realiza o exame, com questões selecionadas aleatoriamente e tempo cronometrado. A prova é composta por 21 questões com duração de 2 horas e 30 minutos.
+
 ![Avaliação](./files/avaliation.gif)
 
 **📊 Página de Resultados:** Após a finalização do exame, o aluno recebe um *feedback* detalhado sobre seu desempenho, com porcentagem de acertos por tema.
+
 ![Resultados](./files/resultavaliation.gif)
 
 **📈 Histórico de Provas:** Uma área de perfil onde o usuário pode acompanhar seu progresso, rever avaliações passadas e identificar pontos de melhoria contínua.
+
 ![Histórico de Provas](./files/result.gif)
 
 **📄 Sobre Nós:** Uma seção que conta a história do projeto e dos desenvolvedores.
+
 ![Sobre nós](./files/sobrenos.gif)
 
 ## 💻 Tecnologias Utilizadas
@@ -45,7 +51,7 @@ Nossa primeira versão já conta com uma interface simples, rápida e intuitiva,
 Para construir o Personal Teacher, utilizamos uma stack de tecnologias modernas e eficientes, garantindo uma aplicação robusta e escalável.
 
 |      Categoria      |         Tecnologia       |                                  Descrição                                 |
-|                     |                          |                                                                            |
+|:-------------------:|:------------------------:|:---------------------------------------------------------------------------|
 |    **Front-End**    |     `React com Vite`     | Para a criação de uma interface de usuário reativa, rápida e moderna.      |
 |    **Back-End**     |   `Node.js com Express`  | Para gerenciar, processar dados e se comunicar com o banco de dados.       |
 |    **Back-End**     |       `Prisma ORM`       | Ferramenta para facilitar a interação e as operações com o banco de dados. |
