@@ -62,9 +62,9 @@ Para construir o Personal Teacher, utilizamos uma stack de tecnologias modernas 
 
 Nossos planos futuros para a plataforma incluem:
 
-**🤖 Integração com Inteligência Artificial:** Para criar novas questões adaptadas, corrigir redações e fornecer *feedback* ainda mais detalhado. 
+**Integração com Inteligência Artificial:** Para criar novas questões adaptadas, corrigir redações e fornecer *feedback* ainda mais detalhado. 
 
-**📚 Expansão de Conteúdo:** Adicionar novas matérias, outros exames e até mesmo cursos de línguas estrangeiras. 
+**Expansão de Conteúdo:** Adicionar novas matérias, outros exames e até mesmo cursos de línguas estrangeiras. 
 
 ## 🧑‍💻 Colaboradores
 
