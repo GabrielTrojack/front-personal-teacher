@@ -118,9 +118,6 @@ function PerfilSection() {
                 ) : (
                     <p className='texto-materia'>Não ha nada aqui ainda, faça uma prova primeiro...</p>
                 )}
-
-
-
                 <BacktoTop />
             </div>
             </div>
